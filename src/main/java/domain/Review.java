@@ -5,12 +5,12 @@
 */
 package domain;
 
-//import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-//import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
-//@JsonDeserialize(builder = Review.Builder.class)
 
 import jakarta.persistence.*;
+@JsonDeserialize(builder = Review.Builder.class)
 
 @Entity
 public class Review {
@@ -63,7 +63,7 @@ public class Review {
     }
 
     // Builder Class
-    //@JsonPOJOBuilder(withPrefix = "set")
+    @JsonPOJOBuilder(withPrefix = "set")
     public static class Builder {
         private String reviewId;
         private Customer customer;
